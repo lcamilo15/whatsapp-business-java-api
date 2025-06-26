@@ -27,3 +27,54 @@ hs_err_pid*
 /src/test/java/com/whatsapp/api/TestConstants.java
 /htmlReport
 /machinet.conf
+/build/
+/Projects.whatsapp-business-java-api.iml
+/Projects.whatsapp-business-java-api.main.iml
+/Projects.whatsapp-business-java-api.test.iml
+/whatsapp-business-java-api.ipr
+/whatsapp-business-java-api.iws
+
+
+# === Gradle ===
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# === IntelliJ IDEA ===
+.idea/
+*.iml
+*.iws
+out/
+
+
+
+# === Kotlin/Java Cache ===
+*.class
+*.jar
+*.war
+*.ear
+
+
+# === OS-specific ===
+.DS_Store
+Thumbs.db
+
+
+# === Environment files ===
+.env
+*.env
+*.local
+.envrc
+
+# === VS Code (if applicable) ===
+.vscode/
+
+# === Package manager metadata ===
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# === Misc ===
+/tmp/
+/*.swp
+*.bak
