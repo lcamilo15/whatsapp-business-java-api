@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'com.whatsapp.api'
-version = 'v0.6.1'
+version = 'v0.6.2'
 description = 'Whatsapp business api SDK, written in java. This SDK implements the Official Whatsapp Cloud API and WhatsApp Business Management API.'
 
 java {

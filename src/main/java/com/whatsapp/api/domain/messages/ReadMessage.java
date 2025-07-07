@@ -1,47 +1,79 @@
 package com.whatsapp.api.domain.messages;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * 
- * To mark the message as read, you must first create Read message object
- * 
- * @see <a href="https://developers.facebook.com/docs/whatsapp/cloud-api/guides/mark-message-as-read">API documentation - messages</a>
+ * Represents a request to mark a message as read,
+ * optionally displaying a typing indicator to the WhatsApp user.
+ *
+ * @see <a href="https://developers.facebook.com/docs/whatsapp/cloud-api/guides/mark-message-as-read">API documentation - Mark Message as Read</a>
  */
 public class ReadMessage {
-	
-	@JsonProperty("messaging_product")
-    private final String messagingProduct = "whatsapp";
-	
-    @JsonProperty("status")
-    private String status = "read";
 
-    @JsonProperty("message_id")
-    private String messageId;
+	@JsonProperty("messaging_product")
+	private final String messagingProduct = "whatsapp";
+
+	@JsonProperty("status")
+	private String status = "read";
+
+	@JsonProperty("message_id")
+	private String messageId;
+
+	@JsonProperty("typing_indicator")
+	@JsonInclude(JsonInclude.Include.NON_NULL)
+	private TypingIndicator typingIndicator;
 
 	public ReadMessage(String messageId) {
-		super();
 		this.messageId = messageId;
 	}
 
-	/**
-	 * @return the status
-	 */
+	public ReadMessage(String messageId, TypingIndicator typingIndicator) {
+		this.messageId = messageId;
+		this.typingIndicator = typingIndicator;
+	}
+
+	public String getMessagingProduct() {
+		return messagingProduct;
+	}
+
 	public String getStatus() {
 		return status;
 	}
 
-	/**
-	 * @return the messageId
-	 */
 	public String getMessageId() {
 		return messageId;
 	}
 
+	public TypingIndicator getTypingIndicator() {
+		return typingIndicator;
+	}
+
+	public void setTypingIndicator(TypingIndicator typingIndicator) {
+		this.typingIndicator = typingIndicator;
+	}
+
 	/**
-	 * @return the messagingProduct
+	 * Represents the typing indicator object.
 	 */
-	public String getMessagingProduct() {
-		return messagingProduct;
+	public static class TypingIndicator {
+
+		@JsonProperty("type")
+		private String type;
+
+		public TypingIndicator() {
+		}
+
+		public TypingIndicator(String type) {
+			this.type = type;
+		}
+
+		public String getType() {
+			return type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
 	}
 }
