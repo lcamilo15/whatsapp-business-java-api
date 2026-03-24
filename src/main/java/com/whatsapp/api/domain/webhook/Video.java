@@ -6,9 +6,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * The type Video.
  *
  * @param sha256   The checksum of the media.
- * @param mimeType The mime type of the media.                 The caption that describes the media.
- * @param caption  Added to Webhooks if it has been previously specified.                 The caption that describes the media.
- * @param id       The ID of the medi
+ * @param mimeType The mime type of the media.
+ * @param caption  Added to Webhooks if it has been previously specified.
+ * @param id       The ID of the media.
+ * @param url      The URL to download the video file.
  */
 public record Video(
 
@@ -18,9 +19,9 @@ public record Video(
 
         @JsonProperty("caption") String caption,
 
-        @JsonProperty("id") String id
+        @JsonProperty("id") String id,
 
-
+        @JsonProperty("url") String url
 
 ) {
 }

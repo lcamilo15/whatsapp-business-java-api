@@ -7,8 +7,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  *
  * @param sha256   The checksum of the media.
  * @param mimeType The mime type of the media.
- * @param caption  Added to Webhooks if it has been previously specified.                 The caption that describes the media.
- * @param id       The ID of the medi
+ * @param caption  Added to Webhooks if it has been previously specified.
+ * @param id       The ID of the media.
+ * @param url      The URL to download the image file.
  */
 public record Image(
 
@@ -18,6 +19,8 @@ public record Image(
 
         @JsonProperty("caption") String caption,
 
-        @JsonProperty("id") String id) {
+        @JsonProperty("id") String id,
+
+        @JsonProperty("url") String url) {
 
 }

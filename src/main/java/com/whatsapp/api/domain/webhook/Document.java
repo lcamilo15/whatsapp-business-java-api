@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * @param sha256   Hash
  * @param id       ID for the document
  * @param caption  Caption for the document, if provided
+ * @param url      The URL to download the document file.
  */
 public record Document(
 
@@ -21,8 +22,9 @@ public record Document(
 
         @JsonProperty("id") String id,
 
-        @JsonProperty("caption") String caption
+        @JsonProperty("caption") String caption,
 
+        @JsonProperty("url") String url
 
 ) {
 }
