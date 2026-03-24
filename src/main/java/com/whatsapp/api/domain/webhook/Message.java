@@ -28,6 +28,8 @@ import java.util.List;
  * @param video       A media object with the video information. Added to Webhook if type is video. See {@link Video}
  * @param audio       A media object with the audio information. Added to Webhook if type is audio (including voice messages). See {@link Audio}
  * @param document    A media object with the document information. Added to Webhook if type is document. See {@link Document}
+ * @param bsuId       Business-Scoped User ID (BSUID). New in 2026, privacy-preserving identifier for the sender.
+ * @param username    The sender's WhatsApp username. Available when username visibility is enabled (June 2026).
  */
 public record Message(
 
@@ -70,5 +72,9 @@ public record Message(
 
         @JsonProperty("audio") Audio audio,
 
-        @JsonProperty("document") Document document) {
+        @JsonProperty("document") Document document,
+
+        @JsonProperty("bsu_id") String bsuId,
+
+        @JsonProperty("username") String username) {
 }

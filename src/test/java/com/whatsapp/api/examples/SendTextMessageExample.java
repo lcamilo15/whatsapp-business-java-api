@@ -18,7 +18,7 @@ public class SendTextMessageExample {
 
     public static void main(String[] args) {
 
-        WhatsappApiConfig.setApiVersion(ApiVersion.V18_0);
+        WhatsappApiConfig.setApiVersion(ApiVersion.V22_0);
         WhatsappApiFactory factory = WhatsappApiFactory.newInstance(TestConstants.TOKEN);
 
         WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi();
