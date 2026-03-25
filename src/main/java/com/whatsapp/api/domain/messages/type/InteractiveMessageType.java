@@ -27,7 +27,23 @@ public enum InteractiveMessageType {
     /**
      * Product list interactive message type.
      */
-    PRODUCT_LIST("product_list");
+    PRODUCT_LIST("product_list"),
+    /**
+     * Flow interactive message type.
+     */
+    FLOW("flow"),
+    /**
+     * Catalog message interactive message type.
+     */
+    CATALOG_MESSAGE("catalog_message"),
+    /**
+     * Order details interactive message type.
+     */
+    ORDER_DETAILS("order_details"),
+    /**
+     * Order status interactive message type.
+     */
+    ORDER_STATUS("order_status");
 
     private final String value;
 
