@@ -27,7 +27,11 @@ public enum MessageStatus {
     /**
      * Message deleted by the user. (	Message is replaced in WhatsApp mobile with the note "This message was deleted".)
      */
-    DELETED("deleted");
+    DELETED("deleted"),
+    /**
+     * Voice/audio message played by the recipient.
+     */
+    PLAYED("played");
 
     private final String value;
 
