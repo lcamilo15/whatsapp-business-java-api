@@ -14,6 +14,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * @param thumbnailUrl Added if media_type is “video”. Contains a URL to the thumbnail image of the clicked video.
  * @param headline     Specifies the headline used in the ad or post that generated the message.
  * @param sourceUrl    Specifies the URL that leads to the ad or post clicked by the user. Opening this URL takes you to the ad viewed by your user.
+ * @param ctwaClid     Click-to-WhatsApp click identifier. Used to attribute the conversation back to the ad click via Meta's Marketing/Conversions API.
+ * @param ref          Optional referral payload (the "ref" field) propagated from the ad's deep link.
  */
 public record Referral(
 
@@ -33,7 +35,11 @@ public record Referral(
 
         @JsonProperty("headline") String headline,
 
-        @JsonProperty("source_url") String sourceUrl
+        @JsonProperty("source_url") String sourceUrl,
+
+        @JsonProperty("ctwa_clid") String ctwaClid,
+
+        @JsonProperty("ref") String ref
 
 ) {
 }
